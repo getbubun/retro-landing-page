@@ -8,7 +8,7 @@ const div = document.getElementById('container');
 const showAMPM = true;
  //show time 
  function showTime(){
-    // let today = new Date(2019, 06, 10, 20, 33, 30);
+    // let today = new Date(2019, 06, 10, 00, 59, 30);
      let today = new Date();
      let hour = today.getHours();
      let min = today.getMinutes();
@@ -38,7 +38,7 @@ const showAMPM = true;
 //Set Background
 
 function setBgGreet(){
-    // let today = new Date(2019, 06, 10, 20, 33, 30);
+    // let today = new Date(2019, 06, 10, 00, 59, 30);
     let today = new Date();
        hour = today.getHours();
 
@@ -51,8 +51,7 @@ function setBgGreet(){
         greeting.textContent = 'Good Morning';
        } 
     // Afternoon Background
-       else if( hour < 10 && hour > 15 ) {
-           
+       else if( hour > 10 && hour < 15 ) {   
         if( hour > 10 && hour < 13  )div.style.backgroundImage = "url(./img/4-earlyafternoon.png)";
         else if( hour > 12 && hour < 15) div.style.backgroundImage = "url(./img/5-midafternoon.png)";
         else if( hour > 14 && hour < 17) div.style.backgroundImage = "url(./img/6-lateafternoon.png)";
@@ -70,8 +69,8 @@ function setBgGreet(){
        else{
            if( hour > 19 && hour < 23) div.style.backgroundImage= "url(./img/10-earlynight.png)";
            else if( hour > 22 && hour < 25) div.style.backgroundImage= "url(./img/11-midnight.png)";
-           else if( hour > 0 && hour < 3 ) div.style.backgroundImage= "url(./img/12-latenight.png)";
-           greeting.textContent = 'Good Night'; 
+           else if( hour >= 0 && hour < 3 ) div.style.backgroundImage= "url(./img/12-latenight.png)";
+           greeting.textContent = 'Good Night '; 
        }
        
 }
@@ -129,3 +128,4 @@ focus.addEventListener('blur', setFocus);
  setBgGreet();
  getName();
  getFocus();
+
