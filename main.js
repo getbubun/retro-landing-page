@@ -1,20 +1,84 @@
-window.onload = () => {
 
-    'use strict';
 
+    // 'use strict';
+
+    const divInstall = document.getElementById('installContainer');
+    const butInstall = document.getElementById('butInstall');
+
+  
+  
+
+    let deferredPrompt;
+
+window.addEventListener('beforeinstallprompt', (event) => {
+    console.log('👍', 'beforeinstallprompt', event);
+    e.preventDefault();
+      // Stash the event so it can be triggered later.
+      deferredPrompt = e;
+    // Stash the event so it can be triggered later.
+    window.deferredPrompt = event;
+    // Remove the 'hidden' class from the install button container
+    divInstall.classList.toggle('hidden', false);
+  });
+  
+  
+  
+  
+  
+  butInstall.addEventListener('click', () => {
+    console.log('👍', 'butInstall-clicked');
+    const promptEvent = window.deferredPrompt
+    if (!promptEvent) {
+      // The deferred prompt isn't available.
+      return;
+    }
+    // Show the install prompt.
+    promptEvent.prompt();
+    // Log the result
+    promptEvent.userChoice.then((result) => {
+      console.log('👍', 'userChoice', result);
+      // Reset the deferred prompt variable, since 
+      // prompt() can only be called once.
+      window.deferredPrompt = null;
+      // Hide the install button.
+      divInstall.classList.toggle('hidden', true);
+    });
+  });
+  
+  window.addEventListener('appinstalled', (event) => {
+    console.log('👍', 'appinstalled', event);
+  });
+  
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker
              .register('./sw.js');
-  }
-
-  const divInstall = document.getElementById('installContainer');
-const butInstall = document.getElementById('butInstall');
+ 
 
 const time = document.getElementById('time');
 const greeting = document.getElementById('greeting');
 const name = document.getElementById('name');
 const focus = document.getElementById('focus');
 const div = document.getElementById('container');
+const url = 'http://quotes.stormconsultancy.co.uk/random.json';
+const quote = document.getElementById('quote');
+
+
+
+// fetch random quotes
+
+fetch(url)
+.then(res => res.json())
+.then(data =>{
+    console.log(data);
+    let result = data;
+    
+    this.quote.innerText = `"${result.quote}"`;
+    document.getElementById('quote-author').innerText = `- ${result.author}`;
+    
+})
+.catch(err => console.log(err))
+
+
 
 //Options
 const showAMPM = true;
