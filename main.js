@@ -1,3 +1,15 @@
+window.onload = () => {
+
+    'use strict';
+
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+             .register('./sw.js');
+  }
+
+  const divInstall = document.getElementById('installContainer');
+const butInstall = document.getElementById('butInstall');
+
 const time = document.getElementById('time');
 const greeting = document.getElementById('greeting');
 const name = document.getElementById('name');
@@ -40,7 +52,7 @@ const showAMPM = true;
 function setBgGreet(){
     // let today = new Date(2019, 06, 10, 00, 59, 30);
     let today = new Date();
-       hour = today.getHours();
+      let hour = today.getHours();
 
     // Morning background
        if(hour > 3 && hour < 11 ){
@@ -129,3 +141,4 @@ focus.addEventListener('blur', setFocus);
  getName();
  getFocus();
 
+}

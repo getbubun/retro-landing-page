@@ -1,0 +1,10 @@
+{
+    "name": "Retro Landing Page",
+    "short_name": "Retro Landing Page",
+    "description": "landing page description",
+    "lang": "en-US",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#f25f4c",
+    "theme_color": "#f25f4c"
+  }
