@@ -63,6 +63,12 @@ h2 {
   opacity: 0.8;
   font-size: 16px;
 }
+.transparent {
+  background: #1b1b1ba6;
+  border-radius: 8px;
+  padding: 10px 0px;
+  color: #ff9800;
+}
 #quote-author {
   margin-top: 10px;
   transition: all 0.35s ease;
@@ -73,6 +79,54 @@ h2 {
 
 #quote:hover ~ #quote-author {
   opacity: 1;
+}
+.search {
+  position: fixed;
+  top: 5px;
+  left: 5px;
+  width: 230px;
+  -webkit-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+}
+.search-icon {
+  position: absolute;
+  z-index: 1;
+  left: 16px;
+  top: 7px;
+  line-height: 57px;
+  opacity: 0.7;
+  -webkit-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+  cursor: pointer;
+}
+.search-input {
+  position: absolute;
+  background: transparent;
+  border: none;
+  -webkit-appearance: none;
+  z-index: 2;
+  left: 10px;
+  top: 0;
+  padding-left: 30px;
+  padding-bottom: 2px;
+  height: 30px;
+  width: 100%;
+  font-size: 18px;
+  line-height: 20px;
+  cursor: pointer;
+  color: #fff;
+  font-family: "Retro", cursive;
+}
+
+.search-icon input[type="search"] {
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+
+input[type="search"]:focus {
+  outline: 0;
+  border-bottom: 1px solid #fff;
+  cursor: text;
 }
 
 #installContainer {
@@ -95,7 +149,7 @@ h2 {
   #time {
     font-size: 3rem;
   }
-  h1 {
+  s h1 {
     font-size: 22px;
     margin-bottom: 4rem;
   }
