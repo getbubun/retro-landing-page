@@ -1,6 +1,6 @@
 @font-face {
-  font-family: "Retro";
-  src: url("FreePixel.ttf");
+  font-family: 'Retro';
+  src: url('FreePixel.ttf');
 }
 
 * {
@@ -10,7 +10,7 @@
 }
 
 body {
-  font-family: "Retro", cursive;
+  font-family: 'Retro', cursive;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -31,6 +31,7 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
+  background-size: cover;
 }
 #time {
   font-size: 4rem;
@@ -115,15 +116,15 @@ h2 {
   line-height: 20px;
   cursor: pointer;
   color: #fff;
-  font-family: "Retro", cursive;
+  font-family: 'Retro', cursive;
 }
 
-.search-icon input[type="search"] {
+.search-icon input[type='search'] {
   border-radius: 0;
   -webkit-appearance: none;
 }
 
-input[type="search"]:focus {
+input[type='search']:focus {
   outline: 0;
   border-bottom: 1px solid #fff;
   cursor: text;
